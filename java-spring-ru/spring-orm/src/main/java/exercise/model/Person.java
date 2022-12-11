@@ -9,7 +9,9 @@ import javax.persistence.Id;
 
 // BEGIN
 @Entity
-@Table(name="person")
+@Table(name = "person")
+@Getter
+@Setter
 // END
 public class Person {
 
@@ -20,29 +22,5 @@ public class Person {
     // BEGIN
     private String firstName;
     private String lastName;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
     // END
 }
