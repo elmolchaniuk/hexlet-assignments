@@ -20,29 +20,29 @@ public class PeopleController {
     @Autowired
     private PersonRepository personRepository;
 
-    @GetMapping(path="/{id}")
+    @GetMapping(path = "/{id}")
     public Person getPerson(@PathVariable long id) {
         return this.personRepository.findById(id);
     }
 
-    @GetMapping(path="")
+    @GetMapping(path = "")
     public Iterable<Person> getPeople() {
         return this.personRepository.findAll();
     }
 
     // BEGIN
-    @PostMapping(path="")
-    public void createPerson (@RequestBody Person person){
-         this.personRepository.save(person);}
+    @PostMapping(path = "")
+    public void createPerson(@RequestBody Person person) {
+        this.personRepository.save(person); }
 
-    @DeleteMapping(path="/{id}")
-    public void deletePerson(@PathVariable long id){
-         this.personRepository.deleteById(id);}
+    @DeleteMapping(path = "/{id}")
+    public void deletePerson(@PathVariable long id) {
+        this.personRepository.deleteById(id); }
 
-    @PatchMapping(path="/{id}")
-    public void updatePerson(@PathVariable long id){
-         Person updatedPerson=this.personRepository.findById(id);
-         updatedPerson.setId(id);
-         this.personRepository.save(updatedPerson);}
+    @PatchMapping(path = "/{id}")
+    public void updatePerson(@PathVariable long id) {
+        Person updatedPerson = this.personRepository.findById(id);
+        updatedPerson.setId(id);
+        this.personRepository.save(updatedPerson); }
     // END
 }
