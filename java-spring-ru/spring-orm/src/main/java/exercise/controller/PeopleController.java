@@ -40,9 +40,8 @@ public class PeopleController {
         this.personRepository.deleteById(id); }
 
     @PatchMapping(path = "/{id}")
-    public void updatePerson(@PathVariable long id) {
-        Person updatedPerson = this.personRepository.findById(id);
-        updatedPerson.setId(id);
-        this.personRepository.save(updatedPerson); }
+    public void updatePerson(@PathVariable long id, @RequestBody Person person) {
+        person.setId(id);
+        this.personRepository.save(person); }
     // END
 }

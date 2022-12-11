@@ -8,10 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 // BEGIN
-@Entity
-@Table(name = "people")
 @Getter
 @Setter
+@Entity
+@Table(name = "people")
 // END
 public class Person {
 
