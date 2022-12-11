@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 // BEGIN
 @Entity
-@Table(name = "person")
+@Table(name = "people")
 @Getter
 @Setter
 // END
