@@ -20,18 +20,18 @@ public class PeopleController {
     @Autowired
     private PersonRepository personRepository;
 
-    @GetMapping(path ="/{id}")
+    @GetMapping(path="/{id}")
     public Person getPerson(@PathVariable long id) {
         return this.personRepository.findById(id);
     }
 
-    @GetMapping(path ="")
+    @GetMapping(path="")
     public Iterable<Person> getPeople() {
         return this.personRepository.findAll();
     }
 
     // BEGIN
-    @PostMapping(path ="")
+    @PostMapping(path="")
     public void createPerson (@RequestBody Person person){
          this.personRepository.save(person);}
 
