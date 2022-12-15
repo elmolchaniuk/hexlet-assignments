@@ -31,15 +31,15 @@ public class PeopleController {
     }
 
     // BEGIN
-    @PostMapping(path = "")
+    @PostMapping(path = "/people")
     public void createPerson(@RequestBody Person person) {
         this.personRepository.save(person); }
 
-    @DeleteMapping(path = "/{id}")
+    @DeleteMapping(path = "people/{id}")
     public void deletePerson(@PathVariable long id) {
         this.personRepository.deleteById(id); }
 
-    @PatchMapping(path = "/{id}")
+    @PatchMapping(path = "people/{id}")
     public void updatePerson(@PathVariable long id, @RequestBody Person person) {
         person.setId(id);
         this.personRepository.save(person); }
