@@ -25,7 +25,7 @@ public class PeopleController {
     }
 
     // BEGIN
-    @GetMapping (path = "people/")
+    @GetMapping (path = "/people")
         public void showAllPersons (@RequestBody Map <String, Object> persons) {
             String query = "SELECT * FROM person";
             jdbc.update(query, persons.get("first_name"), persons.get("last_name"));}
