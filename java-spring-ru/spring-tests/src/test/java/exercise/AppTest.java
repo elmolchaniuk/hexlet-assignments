@@ -106,56 +106,56 @@ public class AppTest {
 
     // BEGIN
     @Test
-    void testGetPerson ()throws Exception {
-            long id = 1;
-            MockHttpServletResponse response = mockMvc
-                    .perform(get("/" + id))
+    void testGetPerson()throws Exception {
+       long id = 1;
+       MockHttpServletResponse response = mockMvc
+                    .perform(get("/people/" + id))
                     .andReturn()
                     .getResponse();
 
-            assertThat(response.getStatus()).isEqualTo(200);
-            assertThat(response.getContentType()).isEqualTo(MediaType.APPLICATION_JSON.toString());
-            assertThat(response.getContentAsString()).contains("id", "John", "Smith");
+       assertThat(response.getStatus()).isEqualTo(200);
+       assertThat(response.getContentType()).isEqualTo(MediaType.APPLICATION_JSON.toString());
+       assertThat(response.getContentAsString()).contains("id", "John", "Smith");
     }
 
     @Test
-    void testUpdatePerson () throws Exception {
-            long id = 2;
-            MockHttpServletResponse response = mockMvc
-                    .perform(patch("/" +id)
+    void testUpdatePerson() throws Exception {
+       long id = 2;
+       MockHttpServletResponse response = mockMvc
+                    .perform(patch("/people/" + id)
                             .contentType(MediaType.APPLICATION_JSON)
                             .content("{\"firstName\": \"Elizaveta\", \"lastName\": \"Molchaniuk\"}")
                     )
                     .andReturn()
                     .getResponse();
 
-            assertThat(response.getStatus()).isEqualTo(200);
+       assertThat(response.getStatus()).isEqualTo(200);
 
-            MockHttpServletResponse responseGet = mockMvc
-                    .perform(get("/"))
+       MockHttpServletResponse responseGet = mockMvc
+                    .perform(get("/people"))
                     .andReturn()
                     .getResponse();
 
-            assertThat(responseGet.getContentAsString()).contains("Elizaveta", "Molchaniuk");
-            assertThat(responseGet.getContentAsString()).doesNotContain("Jack", "Doe");
+       assertThat(responseGet.getContentAsString()).contains("Elizaveta", "Molchaniuk");
+       assertThat(responseGet.getContentAsString()).doesNotContain("Jack", "Doe");
     }
 
     @Test
-    void testDeletePerson () throws Exception {
-            long id = 3;
-            MockHttpServletResponse response = mockMvc
-                    .perform(delete("/" + id))
+    void testDeletePerson() throws Exception {
+       long id = 3;
+       MockHttpServletResponse response = mockMvc
+                    .perform(delete("/people/" + id))
                     .andReturn()
                     .getResponse();
 
-            assertThat(response.getStatus()).isEqualTo(200);
+       assertThat(response.getStatus()).isEqualTo(200);
 
-            MockHttpServletResponse responseGet = mockMvc
-                    .perform(get("/"))
+       MockHttpServletResponse responseGet = mockMvc
+                    .perform(get("/people"))
                     .andReturn()
                     .getResponse();
 
-            assertThat(responseGet.getContentAsString()).doesNotContain("Jassica", "Simpson");
+       assertThat(responseGet.getContentAsString()).doesNotContain("Jassica", "Simpson");
     }
     // END
 }
