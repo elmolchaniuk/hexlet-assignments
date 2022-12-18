@@ -11,7 +11,6 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
-@Table(name = "people")
 // END
 public class Person {
 

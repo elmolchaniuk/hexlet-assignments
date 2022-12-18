@@ -31,17 +31,17 @@ public class PeopleController {
     }
 
     // BEGIN
-    @PostMapping(path = "/people")
-    public void createPerson(@RequestBody Person person) {
-        this.personRepository.save(person); }
+    @PostMapping(path = "/")
+    public Person createPerson(@RequestBody Person person) {
+        return this.personRepository.save(person); }
 
-    @DeleteMapping(path = "people/{id}")
+    @DeleteMapping(path = "/{id}")
     public void deletePerson(@PathVariable long id) {
         this.personRepository.deleteById(id); }
 
-    @PatchMapping(path = "people/{id}")
-    public void updatePerson(@PathVariable long id, @RequestBody Person person) {
+    @PatchMapping(path = "/{id}")
+    public Person updatePerson(@PathVariable long id, @RequestBody Person person) {
         person.setId(id);
-        this.personRepository.save(person); }
+        return this.personRepository.save(person); }
     // END
 }
