@@ -28,19 +28,19 @@ public class Post {
 
     // BEGIN
     public boolean publish() {
-    if (state == PostState.CREATED) {
-	state = PostState.PUBLISHED;
-	return true; 
-}
+        if (state == PostState.CREATED) {
+            state = PostState.PUBLISHED;
+            return true; 
+        }
  	return false;
-}
+    }
 
     public boolean archive() {
-    if (state == PostState.CREATED || state == PostState.PUBLISHED) {
-	state = PostState.ARCHIVED;
-	return true;
-}
+        if (state == PostState.CREATED || state == PostState.PUBLISHED) {
+            state = PostState.ARCHIVED;
+            return true;
+        }
 	return false;
-}
+    }
     // END
 }

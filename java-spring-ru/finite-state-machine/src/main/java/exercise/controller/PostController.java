@@ -55,13 +55,13 @@ public class PostController {
     @PatchMapping(path = "/{id}/archive")
     public Post archive(@PathVariable long id) {
         // BEGIN
-	Post post = postRepository.findById(id)
+        Post post = postRepository.findById(id)
 	    .orThrow(() -> new PostNotFoundException(id));
 
 	if (post.archive()) {
 	    return postRepository.save(post);
-}
-	throw new UnprocessableEntityException("Archiving is not possible");        
+        }
+        throw new UnprocessableEntityException("Archiving is not possible");       
         // END
     }
 }
