@@ -32,7 +32,7 @@ public class Post {
             state = PostState.PUBLISHED;
             return true; 
         }
- 	return false;
+            return false;
     }
 
     public boolean archive() {

@@ -56,12 +56,12 @@ public class PostController {
     public Post archive(@PathVariable long id) {
         // BEGIN
         Post post = postRepository.findById(id)
-	    .orThrow(() -> new PostNotFoundException(id));
+            .orElseThrow(() -> new PostNotFoundException(id));
 
 	if (post.archive()) {
 	    return postRepository.save(post);
         }
-        throw new UnprocessableEntityException("Archiving is not possible");       
+        throw new UnprocessableEntityException("Archiving is not possible");
         // END
     }
 }
