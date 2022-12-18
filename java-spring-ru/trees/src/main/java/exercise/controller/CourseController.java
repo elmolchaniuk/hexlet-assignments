@@ -33,7 +33,7 @@ public class CourseController {
     @GetMapping(path = "/{id}/previous/")
     public Course getPreviousCourses(@PathVariable long id) {
         if (path != null) {
-        return Arrays.stream(path.split.DOT_STRING))
+        return Arrays.stream(path.split.DOT_STRING));
     }
     }
     // END
