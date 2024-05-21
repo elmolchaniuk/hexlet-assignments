@@ -28,13 +28,13 @@ public class Application {
 
     //Список всех постов
     @GetMapping("/posts")
-    public List<Post> list (@RequestParam(defaultValue = "10") Integer limit) {
+    public List<Post> list(@RequestParam(defaultValue = "10") Integer limit) {
         return posts.stream().limit(limit).toList();
     }
 
     //Просмотр конкретного поста
     @GetMapping("/posts/{id}")
-    public Optional<Post> showPost (@PathVariable String id) {
+    public Optional<Post> showPost(@PathVariable String id) {
         var post = posts.stream()
                 .filter(p -> p.getId().equals(id))
                 .findFirst();
@@ -43,14 +43,14 @@ public class Application {
 
     //Создание нового поста
     @PostMapping("/posts")
-    public Post createNewPost (@RequestBody Post post) {
+    public Post createNewPost(@RequestBody Post post) {
         posts.add(post);
         return post;
     }
 
     //Обновление поста
     @PutMapping("/posts/{id}")
-    public Post updatePost (@PathVariable String id, @RequestBody Post data) {
+    public Post updatePost(@PathVariable String id, @RequestBody Post data) {
         var postToUpdate = posts.stream()
                 .filter(p -> p.getId().equals(id))
                 .findFirst();
@@ -65,7 +65,7 @@ public class Application {
 
     //Удаление поста
     @DeleteMapping("/posts/{id}")
-    public void deletePost (@PathVariable String id) {
+    public void deletePost(@PathVariable String id) {
         posts.removeIf(p -> p.getId().equals(id));
     }
 
