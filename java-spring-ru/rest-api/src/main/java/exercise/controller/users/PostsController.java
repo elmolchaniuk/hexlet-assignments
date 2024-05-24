@@ -23,7 +23,6 @@ public class PostsController {
 
     private List<Post> posts = Data.getPosts();
 
-    //Список всех постов, написанных пользователем
     @GetMapping("/users/{id}/posts")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<List<Post>> findUserPosts(@PathVariable Integer id) {
@@ -32,7 +31,6 @@ public class PostsController {
         return ResponseEntity.of(Optional.ofNullable(result));
     }
 
-    //Создание нового поста, привязанного к пользователю по id
     @PostMapping("/users/{id}/posts")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Post> createPost(@RequestBody Post post, @PathVariable Integer id) {
