@@ -1,3 +1,1 @@
-rootProject.name = "SpringBootApplication"
-// spring.jpa.generate-ddl = true
-// spring.jpa.hibernate.ddl-auto
+rootProject.name = 'rest-api'
