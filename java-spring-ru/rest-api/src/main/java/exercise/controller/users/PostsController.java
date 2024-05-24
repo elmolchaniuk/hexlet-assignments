@@ -48,6 +48,3 @@ public class PostsController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(post);
     }
-
-
-}
