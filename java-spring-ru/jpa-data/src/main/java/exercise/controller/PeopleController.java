@@ -1,7 +1,6 @@
 package exercise.controller;
 
 import exercise.repository.PersonRepository;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
