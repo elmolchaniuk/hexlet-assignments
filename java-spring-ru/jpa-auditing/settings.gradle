@@ -1,0 +1,29 @@
+pluginManagement {
+    repositories {
+        maven {
+            url "https://artifactory.raiffeisen.ru/artifactory/plugins-gradle-cache"
+            credentials {
+                username System.getProperty("gradle.wrapperUser")
+                password System.getProperty("gradle.wrapperPassword")
+            }
+        }
+        maven {
+            url "https://artifactory.raiffeisen.ru/artifactory/plugins-gradle"
+            credentials {
+                username System.getProperty("gradle.wrapperUser")
+                password System.getProperty("gradle.wrapperPassword")
+            }
+        }
+
+        maven {
+            url "https://artifactory.raiffeisen.ru/artifactory/rb-virtual-all-mvn"
+            credentials {
+                username System.getProperty("gradle.wrapperUser")
+                password System.getProperty("gradle.wrapperPassword")
+            }
+        }
+    }
+}
+//rootProject.name = "jpa-auditing"
+// spring.jpa.generate-ddl = true
+// spring.jpa.hibernate.ddl-auto
