@@ -9,35 +9,35 @@ plugins {
 group = "exercise"
 version = "0.0.1-SNAPSHOT"
 
-//repositories {
-//    mavenCentral()
-//}
-
 repositories {
-    maven {
-        url 'https://artifactory.raiffeisen.ru/artifactory/rb-virtual-all-mvn'
-        credentials {
-            username System.getProperty ('gradle.wrapperUser')
-            password System.getProperty ('gradle.wrapperPassword')
-        }
-    }
-
-    maven {
-        url 'https://artifactory.raiffeisen.ru/artifactory/rc-libs-release'
-        credentials {
-            username System.getProperty ('gradle.wrapperUser')
-            password System.getProperty ('gradle.wrapperPassword')
-        }
-    }
-
-    maven {
-        url 'https://artifactory.raiffeisen.ru/artifactory/repo1-cache'
-        credentials {
-            username System.getProperty ('gradle.wrapperUser')
-            password System.getProperty ('gradle.wrapperPassword')
-        }
-    }
+    mavenCentral()
 }
+
+//repositories {
+//    maven {
+//        url 'https://artifactory.raiffeisen.ru/artifactory/rb-virtual-all-mvn'
+//        credentials {
+//            username System.getProperty ('gradle.wrapperUser')
+//            password System.getProperty ('gradle.wrapperPassword')
+//        }
+//    }
+//
+//    maven {
+//        url 'https://artifactory.raiffeisen.ru/artifactory/rc-libs-release'
+//        credentials {
+//            username System.getProperty ('gradle.wrapperUser')
+//            password System.getProperty ('gradle.wrapperPassword')
+//        }
+//    }
+//
+//    maven {
+//        url 'https://artifactory.raiffeisen.ru/artifactory/repo1-cache'
+//        credentials {
+//            username System.getProperty ('gradle.wrapperUser')
+//            password System.getProperty ('gradle.wrapperPassword')
+//        }
+//    }
+//}
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
