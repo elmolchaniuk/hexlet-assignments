@@ -3,6 +3,7 @@ package exercise.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 import lombok.Getter;
@@ -18,7 +19,7 @@ public class GuestCreateDTO {
     @Email
     private String email;
 
-    //@Pattern("")
+    @Pattern(regexp = "\\+\\d{11,13}", message = "Phone number must start with '+' and contain 11 to 13 digits")
     private String phoneNumber;
 
     @Size(min = 4, max = 4)

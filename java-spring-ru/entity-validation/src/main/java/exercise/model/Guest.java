@@ -14,16 +14,12 @@ import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Singular;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;
-
-
-
 
 @Entity
 @Table(name = "guests")
@@ -43,7 +39,7 @@ public class Guest {
     @Email
     private String email;
 
-    //@Pattern("")
+    @Pattern(regexp = "\\+\\d{11,13}", message = "Phone number must start with '+' and contain 11 to 13 digits")
     private String phoneNumber;
 
     @Size(min = 4, max = 4)

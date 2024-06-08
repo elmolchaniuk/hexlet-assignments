@@ -29,6 +29,7 @@ public class GuestsController {
     private GuestMapper guestMapper;
 
     @GetMapping(path = "")
+    @ResponseStatus(HttpStatus.OK)
     public List<GuestDTO> index() {
         var products = guestRepository.findAll();
         return products.stream()
